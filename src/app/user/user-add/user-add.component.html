@@ -1,7 +1,10 @@
 <form [formGroup]='userForm' (ngSubmit)='addUser()'>
     First Name:<input type='text' formControlName="firstName">
     Last Name:<input type='text'  formControlName='lastName'>
+    Age:<input type='text'  formControlName='age'>
+    Gender:<input type='text'  formControlName='gender'>
     Email:<input type='text'  formControlName='email'>
     Phone Number:<input type='text'  formControlName='phoneNumber'>
+    Address:<input type='textarea'  formControlName='address'>
     <button type="submit">Add</button> 
 </form>

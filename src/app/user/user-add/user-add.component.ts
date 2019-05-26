@@ -22,13 +22,16 @@ export class UserAddComponent implements OnInit {
     this.userForm = this._builder.group({
       firstName: '',
       lastName: '',
+      age: '',
+      gender: '',
       email: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      address: ''
     });
   }
 
   addUser() {
-    this._userService.createUser(this.userForm.value).subscribe(data=> console.log(data));
+    this._userService.createUser(this.userForm.value).subscribe();
     this.route.navigate(['/users']);
   }
 }
