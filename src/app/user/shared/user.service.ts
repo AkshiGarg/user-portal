@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  private url:string = '/'; 
+  private url:string = '/api/'; 
   
   constructor(private _httpClient: HttpClient) { }
 

@@ -1,111 +1,78 @@
-<!-- <form [formGroup]='userForm' (ngSubmit)='addUser()'>
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" formControlName="firstName">
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" formControlName='lastName'>
-      </div>
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input type="text" class="form-control" id="age" formControlName='age'>
-      </div>
-      <div class="form-group">
-        <label for="gender">Gender</label>
-        <select class="form-control" id="gender" formControlName='gender'>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName='email'>
-      </div>
-      <div class="form-group">
-        <label for="phonenumber">Phone Number</label>
-        <input type="text" class="form-control" id="phonenumber"  formControlName='phoneNumber'>
-      </div>
-      <div class="form-group">
-        <label for="address">Address</label>
-        <textarea class="form-control" id="address" rows="3" formControlName='address'></textarea>
-      </div>
-      <button type="submit">Add</button>
-    </form> -->
+<form [formGroup]='userForm' (ngSubmit)='addUser()'>
+  <div class="form-group row">
+    <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+    </div>
+  </div>
 
-    <form [formGroup]='userForm' (ngSubmit)='addUser()'>
-        <div class="form-group row">
-          <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="firstName" formControlName="firstName">
-          </div>
+  <div class="form-group row">
+    <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="lastName" formControlName='lastName'>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="age" class="col-sm-2 col-form-label">Age</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="age" formControlName='age'>
+    </div>
+  </div>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="Male"
+            formControlName='gender'>
+          <label class="form-check-label" for="gridRadios1">
+            Male
+          </label>
         </div>
-        
-        <div class="form-group row">
-        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="lastName" formControlName='lastName'>
-          </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="Female"
+            formControlName='gender'>
+          <label class="form-check-label" for="gridRadios2">
+            Female
+          </label>
         </div>
-        
-        <div class="form-group row">
-        <label for="age" class="col-sm-2 col-form-label">Age</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="age" formControlName='age'>
-          </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gender" id="gridRadios3" value="Other"
+            formControlName='gender'>
+          <label class="form-check-label" for="gridRadios3">
+            Other
+          </label>
         </div>
-        
-        <fieldset class="form-group" >
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Male" formControlName='gender'>
-                <label class="form-check-label" for="gridRadios1">
-                  Male
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Female" formControlName='gender'>
-                <label class="form-check-label" for="gridRadios2">
-                  Female
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Other" formControlName='gender'>
-                <label class="form-check-label" for="gridRadios3">
-                 Other
-                </label>
-              </div>
-            </div>
-          </div>
-        </fieldset>
-        
-        <div class="form-group row">
-          <label for="email" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" formControlName='email'>
-          </div>
-        </div>
-        
-        <div class="form-group row">
-        <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="phonenumber"  formControlName='phoneNumber'>
-          </div>
-        </div>
-      
-        <div class="form-group row">
-        <label for="address" class="col-sm-2 col-form-label">Address</label>
-          <div class="col-sm-10">
-                <textarea class="form-control" id="address" rows="3" formControlName='address'></textarea>
       </div>
-      </div>
-      
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Add User</button>
-          </div>
-        </div>
-      </form>
+    </div>
+  </fieldset>
+
+  <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" formControlName='email'>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="phonenumber" formControlName='phoneNumber'>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="address" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" id="address" rows="3" formControlName='address'></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" [disabled]='disabled ||userForm.invalid'>Add User</button>
+    </div>
+  </div>
+</form>

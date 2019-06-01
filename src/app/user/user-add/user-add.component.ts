@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-add',
@@ -12,6 +11,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class UserAddComponent implements OnInit {
 
   userForm: FormGroup;
+  disabled: false;
 
   constructor(private _userService: UserService,
     private _builder: FormBuilder,
@@ -31,7 +31,9 @@ export class UserAddComponent implements OnInit {
   }
 
   addUser() {
-    this._userService.createUser(this.userForm.value).subscribe();
-    this.route.navigate(['/users']);
+    this._userService.createUser(this.userForm.value).subscribe(
+      () => this.route.navigate(['/users'])
+    );
+    
   }
 }

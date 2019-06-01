@@ -1,5 +1,5 @@
 {
-    "/":{
+    "/api/**":{
         "target":"http://[::1]:8080",
         "sercure":false,
         "changeOrigin": true
