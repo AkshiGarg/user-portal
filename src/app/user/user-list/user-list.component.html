@@ -1,7 +1,21 @@
-<div *ngFor="let user of users">
-  <span>{{user.id}}</span>
-  <span>{{user.firstName}}</span>
-</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+		<th *ngFor="let head of header" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+      <th scope="row">{{user.id}}</th>
+      <td>{{ user.firstName }} {{user.lastName}}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.address }}</td>
+    </tr>
+  </tbody>
+</table>
 <nav>
-  <a routerLink='/user'>Add User</a>
+  <a routerLink="/user" class="btn btn-dark">Add User</a>
 </nav>

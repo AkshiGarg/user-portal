@@ -9,6 +9,7 @@ import { User } from '../shared/user.model';
 })
 export class UserListComponent implements OnInit {
 
+  header: String[] = ["#", "Name", "Age", "Gender", "Email", "Phone Number", "Address"];
   users: User[];
   constructor(private _userService: UserService) { 
   }

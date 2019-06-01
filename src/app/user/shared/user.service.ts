@@ -8,16 +8,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  private url:string = 'http://localhost:8080'; 
+  private url:string = '/'; 
   
   constructor(private _httpClient: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {
-    return this._httpClient.get<User[]>(this.url + '/users');
+    return this._httpClient.get<User[]>(this.url + 'users');
   }
 
   createUser(user:User): Observable<User> {
-    return this._httpClient.post<User>(this.url + '/user', user);
+    return this._httpClient.post<User>(this.url + 'user', user);
   }
 
 }
